@@ -1,0 +1,208 @@
+:root {
+  --bg-color: #0f0f0f;
+  --container-bg: #1a1a1a;
+  --accent-color: #646cff;
+  --accent-hover: #747bff;
+  --text-primary: #ffffff;
+  --text-secondary: #999999;
+  --border-color: #333333;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  display: flex;
+  justify-content: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 750px;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 30px;
+  background: linear-gradient(to right, #646cff, #a2a7ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.controls-wrapper {
+  background-color: var(--container-bg);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  margin-bottom: 30px;
+  border: 1px solid var(--border-color);
+}
+
+.prompt-input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 18px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+  background-color: #222;
+  color: white;
+  font-size: 1.1rem;
+  resize: vertical;
+  margin-bottom: 25px;
+  transition: border-color 0.3s;
+}
+
+.prompt-input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+.settings-row {
+  display: flex;
+  gap: 20px;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.select-container {
+  flex: 3;
+  text-align: left;
+}
+
+.select-label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 12px; /* Mehr Abstand zum Dropdown */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.format-select {
+  width: 100%;
+  padding: 14px 18px; /* Größerer Innenabstand */
+  background-color: #252525;
+  color: white;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  font-size: 1.1rem; /* Größere Schrift */
+  cursor: pointer;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 15px center;
+  background-size: 18px;
+}
+
+.generate-btn-small {
+  flex: 1;
+  min-width: 140px;
+  height: 54px; /* Angepasst an das größere Select */
+  background-color: var(--accent-color);
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.generate-btn-small:hover:not(:disabled) {
+  background-color: var(--accent-hover);
+  transform: translateY(-2px);
+}
+
+.generate-btn-small:disabled {
+  background-color: #333;
+  color: #666;
+  cursor: not-allowed;
+}
+
+/* Bild Anzeige */
+.image-display-area {
+  min-height: 400px;
+  background-color: var(--container-bg);
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.result-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px;
+  width: 100%;
+}
+
+.result-image {
+  max-width: 100%;
+  max-height: 75vh;
+  border-radius: 12px;
+  box-shadow: 0 15px 45px rgba(0,0,0,0.6);
+}
+
+.result-image.hidden {
+  display: none;
+}
+
+.action-row {
+  margin-top: 20px;
+}
+
+.download-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #333;
+  color: white;
+  border: 1px solid #444;
+  padding: 12px 24px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.download-btn:hover {
+  background-color: #444;
+  border-color: #666;
+}
+
+.hint {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(255, 255, 255, 0.1);
+  border-left-color: var(--accent-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 600px) {
+  .settings-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
