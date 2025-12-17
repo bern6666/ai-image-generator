@@ -295,4 +295,3 @@ Kurze Erklärung der Befehle:
 Ein kleiner Profi-Tipp: Wenn du wissen willst, was Git gerade über deine Dateien denkt (welche geändert wurden und noch nicht hochgeladen sind), kannst du jederzeit diesen Befehl nutzen:
 
 `git status`
-
